@@ -1,19 +1,14 @@
-# Use an official Python runtime as a parent image
-FROM python:3.9-slim
+# Use the Python 3 alpine official image
+FROM python:3-alpine
 
-# Set the working directory in the container
+# Create and change to the app directory.
 WORKDIR /app
 
-# Copy the requirements file into the container at /app
-COPY requirements.txt .
-
-# Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy the rest of the application's code into the container at /app
+# Copy local code to the container image.
 COPY . .
 
-# Make port 8000 available to the world outside this container
-EXPOSE 8000
+# Install project dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Use Railway's PORT environment variable
+# Run the web service on container startup.
+CMD ["hypercorn", "api.main:app", "--bind", "::"]
