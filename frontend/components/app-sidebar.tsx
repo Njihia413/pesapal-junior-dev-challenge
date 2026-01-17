@@ -79,7 +79,7 @@ export function AppSidebar() {
   }
 
   return (
-    <Sidebar collapsible="icon" variant="floating" className="rounded-xl"> {/* Changed variant and added rounded-xl */}
+    <Sidebar collapsible="icon" variant="floating" className="rounded-xl font-montserrat"> {/* Changed variant and added rounded-xl */}
       <SidebarContent className="flex flex-col">
         <div className="grow">
           <SidebarGroup>
