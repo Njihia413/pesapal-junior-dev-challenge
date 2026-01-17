@@ -83,7 +83,7 @@ export function AppSidebar() {
       <SidebarContent className="flex flex-col">
         <div className="grow">
           <SidebarGroup>
-            <SidebarGroupLabel className="px-2 py-1 text-xl font-bold mb-6">PesapalDB</SidebarGroupLabel>
+            <SidebarGroupLabel className="px-2 py-1 text-xl font-bold mb-6 font-montserrat">PesapalDB</SidebarGroupLabel>
             {/* <SidebarGroupLabel className="px-2 py-1 text-xs font-semibold uppercase text-muted-foreground tracking-wider">Dashboards</SidebarGroupLabel> */}
             <SidebarGroupContent>
               <SidebarMenu>
