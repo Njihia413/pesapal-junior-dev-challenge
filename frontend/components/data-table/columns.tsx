@@ -92,14 +92,14 @@ export const columns: ColumnDef<User, unknown>[] = [
           table.getIsAllPageRowsSelected() ||
           (table.getIsSomePageRowsSelected() && "indeterminate")
         }
-        onCheckedChange={(value: boolean) => table.toggleAllPageRowsSelected(!!value)}
+        onCheckedChange={(value: React.ComponentProps<typeof Checkbox>['onCheckedChange']) => table.toggleAllPageRowsSelected(!!value)}
         aria-label="Select all"
       />
     ),
     cell: ({ row }) => (
       <Checkbox
         checked={row.getIsSelected()}
-        onCheckedChange={(value: boolean) => row.toggleSelected(!!value)}
+        onCheckedChange={(value: React.ComponentProps<typeof Checkbox>['onCheckedChange']) => row.toggleSelected(!!value)}
         aria-label="Select row"
       />
     ),

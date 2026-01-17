@@ -166,7 +166,7 @@ export default function ProductsPage() {
     try {
       await api.executeQuery(`
         CREATE TABLE products (
-          id INTEGER PRIMARY KEY AUTO_INCREMENT,
+          id INTEGER PRIMARY KEY,
           name VARCHAR(200) NOT NULL,
           sku VARCHAR(50) UNIQUE NOT NULL,
           category_id INTEGER,
@@ -199,7 +199,7 @@ export default function ProductsPage() {
     {
       accessorKey: 'price',
       header: 'Price',
-      cell: ({ row }) => `Kshs${row.original.price.toFixed(2)}`,
+      cell: ({ row }) => <span>{`Kshs${row.original.price.toFixed(2)}`}</span>,
     },
     {
       accessorKey: 'quantity',
@@ -213,7 +213,7 @@ export default function ProductsPage() {
     {
       accessorKey: 'category_id',
       header: 'Category',
-      cell: ({ row }) => row.original.category_id || '-',
+      cell: ({ row }) => <span>{row.original.category_id || '-'}</span>,
     },
     {
       id: 'actions',
@@ -396,7 +396,7 @@ export default function ProductsPage() {
             <AlertDialogCancel>Cancel</AlertDialogCancel>
             <AlertDialogAction
               onClick={handleDeleteConfirm}
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
             >
               Delete
             </AlertDialogAction>

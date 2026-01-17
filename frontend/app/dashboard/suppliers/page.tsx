@@ -129,7 +129,7 @@ export default function SuppliersPage() {
     try {
       await api.executeQuery(`
         CREATE TABLE suppliers (
-          id INTEGER PRIMARY KEY AUTO_INCREMENT,
+          id INTEGER PRIMARY KEY,
           name VARCHAR(200) NOT NULL,
           email VARCHAR(100) UNIQUE,
           phone VARCHAR(20),

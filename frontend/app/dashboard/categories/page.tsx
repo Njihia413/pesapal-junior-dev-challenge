@@ -117,7 +117,7 @@ export default function CategoriesPage() {
     try {
       await api.executeQuery(`
         CREATE TABLE categories (
-          id INTEGER PRIMARY KEY AUTO_INCREMENT,
+          id INTEGER PRIMARY KEY,
           name VARCHAR(100) UNIQUE NOT NULL,
           description VARCHAR(500)
         )
