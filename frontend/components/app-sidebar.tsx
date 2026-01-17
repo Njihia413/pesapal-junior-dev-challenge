@@ -100,7 +100,7 @@ export function AppSidebar() {
                             >
                               <div className={`flex items-center ${state === "expanded" ? "gap-2" : "justify-center w-full"}`}>
                                 <item.icon className="h-4 w-4" />
-                                {state === "expanded" && <span className="text-sm">{item.title}</span>}
+                                {state === "expanded" && <span className="text-sm font-montserrat">{item.title}</span>}
                               </div>
                               {state === "expanded" && (
                                 openSubmenus[item.title] ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />
@@ -142,7 +142,7 @@ export function AppSidebar() {
                           >
                             <a href={item.url} className={`flex items-center ${state === "expanded" ? "gap-2" : "justify-center w-full"}`}>
                               <item.icon className="h-4 w-4" />
-                              <span className={`text-sm ${state === "expanded" ? "opacity-100" : "opacity-0 w-0 hidden"}`}>{item.title}</span>
+                              <span className={`text-sm font-montserrat ${state === "expanded" ? "opacity-100" : "opacity-0 w-0 hidden"}`}>{item.title}</span>
                             </a>
                           </SidebarMenuButton>
                         </TooltipTrigger>
