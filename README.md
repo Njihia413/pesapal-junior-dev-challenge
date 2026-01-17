@@ -34,38 +34,119 @@ A custom relational database management system built from scratch for the **Pesa
 ```
 pesapal-junior-dev-challenge/
 ├── backend/
-│   ├── rdbms/
-│   │   ├── __init__.py          # Package init
-│   │   ├── types.py             # Data types & validation
-│   │   ├── schema.py            # Column, Table, Schema classes
-│   │   ├── constraints.py       # PK, Unique, NotNull, FK
-│   │   ├── storage.py           # JSON file persistence
-│   │   ├── indexing.py          # B-tree index implementation
-│   │   ├── engine.py            # Main Database class
-│   │   ├── repl.py              # Interactive REPL
-│   │   ├── parser/
-│   │   │   ├── lexer.py         # SQL tokenizer
-│   │   │   ├── ast.py           # AST node definitions
-│   │   │   └── parser.py        # Recursive descent parser
-│   │   └── executor/
-│   │       └── executor.py      # Query execution
+│   ├── .railway/
+│   │   └── railway.json
 │   ├── api/
-│   │   ├── main.py              # FastAPI endpoints
-│   │   └── models.py            # Pydantic models
+│   │   ├── __init__.py
+│   │   ├── main.py
+│   │   └── models.py
+│   ├── rdbms/
+│   │   ├── __init__.py
+│   │   ├── constraints.py
+│   │   ├── engine.py
+│   │   ├── indexing.py
+│   │   ├── repl.py
+│   │   ├── schema.py
+│   │   ├── storage.py
+│   │   ├── types.py
+│   │   ├── executor/
+│   │   │   ├── __init__.py
+│   │   │   └── executor.py
+│   │   └── parser/
+│   │       ├── __init__.py
+│   │       ├── ast.py
+│   │       ├── lexer.py
+│   │       └── parser.py
+│   ├── Dockerfile
 │   └── requirements.txt
 └── frontend/
     ├── app/
-    │   ├── page.tsx             # Dashboard
-    │   ├── products/page.tsx    # Products CRUD
-    │   ├── categories/page.tsx  # Categories CRUD
-    │   ├── suppliers/page.tsx   # Suppliers CRUD
-    │   └── sql-console/page.tsx # SQL Console
+    │   ├── dashboard/
+    │   │   ├── layout.tsx
+    │   │   ├── page.tsx
+    │   │   ├── categories/
+    │   │   │   └── page.tsx
+    │   │   ├── products/
+    │   │   │   └── page.tsx
+    │   │   ├── sql-console/
+    │   │   │   └── page.tsx
+    │   │   └── suppliers/
+    │   │       └── page.tsx
+    │   ├── utils/
+    │   │   └── store.ts
+    │   ├── favicon.ico
+    │   ├── globals.css
+    │   ├── layout.tsx
+    │   └── page.tsx
     ├── components/
-    │   ├── Sidebar.tsx          # Desktop navigation
-    │   └── MobileNav.tsx        # Mobile navigation
-    └── lib/
-        └── api.ts               # API client
+    │   ├── data-table/
+    │   │   ├── columns.tsx
+    │   │   └── data-table.tsx
+    │   ├── ui/
+    │   │   ├── alert-dialog.tsx
+    │   │   ├── alert.tsx
+    │   │   ├── avatar.tsx
+    │   │   ├── badge.tsx
+    │   │   ├── button.tsx
+    │   │   ├── card.tsx
+    │   │   ├── chart.tsx
+    │   │   ├── checkbox.tsx
+    │   │   ├── dialog.tsx
+    │   │   ├── dropdown-menu.tsx
+    │   │   ├── input.tsx
+    │   │   ├── interactive-hover-button.tsx
+    │   │   ├── label.tsx
+    │   │   ├── progress.tsx
+    │   │   ├── scroll-area.tsx
+    │   │   ├── select.tsx
+    │   │   ├── separator.tsx
+    │   │   ├── sheet.tsx
+    │   │   ├── sidebar.tsx
+    │   │   ├── skeleton.tsx
+    │   │   ├── sonner.tsx
+    │   │   ├── switch.tsx
+    │   │   ├── table.tsx
+    │   │   ├── tabs.tsx
+    │   │   ├── textarea.tsx
+    │   │   └── tooltip.tsx
+    │   ├── app-sidebar.tsx
+    │   ├── MobileNav.tsx
+    │   ├── Sidebar.tsx
+    │   ├── theme-provider.tsx
+    │   ├── theme-toggle-button.tsx
+    │   └── theme-toggle.tsx
+    ├── config/
+    │   └── nav.ts
+    ├── hooks/
+    │   └── use-mobile.ts
+    ├── lib/
+    │   ├── api.ts
+    │   └── utils.ts
+    ├── public/
+    │   ├── file.svg
+    │   ├── globe.svg
+    │   ├── next.svg
+    │   ├── vercel.svg
+    │   └── window.svg
+    ├── .gitignore
+    ├── components.json
+    ├── eslint.config.mjs
+    ├── next.config.ts
+    ├── package-lock.json
+    ├── package.json
+    ├── postcss.config.mjs
+    ├── README.md
+    └── tsconfig.json
 ```
+
+---
+
+## Deployment
+
+The backend is deployed to Railway and is publicly accessible:
+
+-   **API Base URL**: `https://pesapal-junior-dev-challenge-production.up.railway.app`
+-   **API Docs**: `https://pesapal-junior-dev-challenge-production.up.railway.app/docs`
 
 ---
 
@@ -73,9 +154,9 @@ pesapal-junior-dev-challenge/
 
 ### Prerequisites
 
-- Python 3.9+
-- Node.js 18+
-- npm or yarn
+-   Python 3.9+
+-   Node.js 18+
+-   npm or yarn
 
 ### Backend Setup
 
@@ -198,22 +279,22 @@ SELECT columns FROM table
 
 **Backend:**
 
-- Python 3.9+
-- FastAPI
-- Pydantic
-- Custom SQL Parser
-- B-Tree Index
+-   Python 3.9+
+-   FastAPI
+-   Pydantic
+-   Custom SQL Parser
+-   B-Tree Index
 
 **Frontend:**
 
-- Next.js 15
-- TypeScript
-- Tailwind CSS 4
-- shadcn/ui
-- Lucide Icons
+-   Next.js 15
+-   TypeScript
+-   Tailwind CSS 4
+-   shadcn/ui
+-   Lucide Icons
 
 ---
 
 ## Author
 
-Built for the Pesapal Junior Developer Challenge 2026.
+Built by Maureen for the Pesapal Junior Developer Challenge 2026.
