@@ -127,7 +127,7 @@ export default function DashboardPage() {
             <Link key={action.href} href={action.href}>
               <Card className="group glass cursor-pointer transition-all hover:scale-[1.02]">
                 <CardContent className="flex items-center gap-4 p-6">
-                  <div className={`flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br ${action.color}`}>
+                  <div className={`flex h-12 w-12 items-center justify-center rounded-lg bg-linear-to-br ${action.color}`}>
                     <action.icon className="h-6 w-6 text-white" />
                   </div>
                   <div>
