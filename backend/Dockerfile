@@ -17,4 +17,3 @@ COPY . .
 EXPOSE 8000
 
 # Use Railway's PORT environment variable
-CMD sh -c "uvicorn api.main:app --host 0.0.0.0 --port ${PORT:-8000}"
