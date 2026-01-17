@@ -16,10 +16,10 @@ export function MobileNav() {
   return (
     <div className="flex items-center justify-between border-b border-white/10 bg-background/60 p-4 backdrop-blur-md md:hidden">
       <div className="flex items-center gap-2">
-        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-400">
+        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-brrom-indigo-500 to-cyan-400">
           <Database className="h-4 w-4 text-white" />
         </div>
-        <span className="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text font-bold text-transparent">
+        <span className="bg-linear-to-r from-indigo-400 to-cyan-400 bg-clip-text font-bold text-transparent">
           PesapalDB
         </span>
       </div>
@@ -35,11 +35,11 @@ export function MobileNav() {
           <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
           {/* Logo */}
           <div className="flex h-16 items-center gap-3 border-b border-white/10 px-6">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-400">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-linear-to-br from-indigo-500 to-cyan-400">
               <Database className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h1 className="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-lg font-bold text-transparent">
+              <h1 className="bg-linear-to-r from-indigo-400 to-cyan-400 bg-clip-text text-lg font-bold text-transparent">
                 PesapalDB
               </h1>
               <p className="text-xs text-muted-foreground">Inventory Manager</p>
