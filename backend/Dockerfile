@@ -15,3 +15,6 @@ COPY . .
 
 # Make port 8000 available to the world outside this container
 EXPOSE 8000
+
+# Use Railway's PORT environment variable
+CMD uvicorn api.main:app --host 0.0.0.0 --port ${PORT:-8000}
