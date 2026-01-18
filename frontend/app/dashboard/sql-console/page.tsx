@@ -1,11 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
-import {
-  Table,
+  import { Button } from '@/components/ui/button';
+  import { Textarea } from '@/components/ui/textarea';
+  import {
+    Table,
   TableBody,
   TableCell,
   TableHead,
@@ -220,7 +221,7 @@ SELECT * FROM users WHERE active = true;"
                 </div>
               ) : (
                 <div className="py-8 text-center">
-                  <p className={result.success ? 'text-emerald-400' : 'text-destructive'}>
+                  <p className={`${result.success ? 'text-emerald-400' : 'text-destructive'} break-all`}>
                     {result.message}
                   </p>
                 </div>
@@ -247,46 +248,46 @@ SELECT * FROM users WHERE active = true;"
                 </Button>
               ))}
             </CardContent>
-                      </Card>
-                      <Card className="glass">
-                        <CardHeader className="pb-3">
-                          <CardTitle className="flex items-center gap-2 text-lg">
-                            <Clock className="h-4 w-4" />
-                            Query History
-                          </CardTitle>
-                        </CardHeader>
-            <CardContent>
-              {history.length === 0 ? (
-                <p className="py-4 text-center text-sm text-muted-foreground">
-                  No queries yet
-                </p>
-              ) : (
-                <div className="space-y-2">
-                  {history.map((item, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => loadFromHistory(item)}
-                      className="flex w-full items-start gap-2 rounded-lg p-2 text-left hover:bg-white/5 transition-colors"
-                    >
-                      {item.success ? (
-                        <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
-                      ) : (
-                        <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-destructive" />
-                      )}
-                      <div className="min-w-0 flex-1">
-                        <p className="truncate font-mono text-xs">{item.sql}</p>
-                        <p className="text-xs text-muted-foreground">
-                          {item.timestamp.toLocaleTimeString()}
-                        </p>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              )}
-            </CardContent>
           </Card>
+            <Card className="glass">
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center gap-2 text-lg">
+                <Clock className="h-4 w-4" />
+                  Query History
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                {history.length === 0 ? (
+                  <p className="py-4 text-center text-sm text-muted-foreground">
+                    No queries yet
+                  </p>
+                ) : (
+                  <div className="grid grid-cols-1 space-y-2">
+                    {history.map((item, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => loadFromHistory(item)}
+                        className="flex w-full items-start gap-2 rounded-lg p-2 text-left hover:bg-white/5 transition-colors"
+                      >
+                        {item.success ? (
+                          <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
+                        ) : (
+                          <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-destructive" />
+                        )}
+                        <div className="min-w-0 flex-1">
+                          <p className="truncate font-mono text-xs">{item.sql}</p>
+                          <p className="text-xs text-muted-foreground">
+                            {item.timestamp.toLocaleTimeString()}
+                          </p>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
-    </div>
   );
 }
