@@ -237,8 +237,14 @@ async def drop_table(table_name: str):
     return {"success": True, "message": result.message}
     
     
-    # Entry point
-    if __name__ == "__main__":
-        import uvicorn
-    
-        uvicorn.run(app, host="0.0.0.0", port=8000)
+@app.post("/reset")
+async def reset_database():
+    """Reset the database."""
+    db.reset()
+    return {"success": True, "message": "Database has been reset"}
+
+# Entry point
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run(app, host="0.0.0.0", port=8000)
