@@ -27,6 +27,14 @@ A custom relational database management system built from scratch for the **Pesa
 - Responsive mobile navigation
 - Pages: Dashboard, Products, Categories, Suppliers, SQL Console
 
+### Screenshots
+
+*A brief demonstration of the system in action. Replace the placeholder links with your actual screenshots.*
+
+Dashboard | SQL Console |
+:---: | :---: |
+*Dashboard Screenshot* | *SQL Console Screenshot* |
+
 ---
 
 ## Project Structure
@@ -110,8 +118,6 @@ pesapal-junior-dev-challenge/
     │   │   ├── textarea.tsx
     │   │   └── tooltip.tsx
     │   ├── app-sidebar.tsx
-    │   ├── MobileNav.tsx
-    │   ├── Sidebar.tsx
     │   ├── theme-provider.tsx
     │   ├── theme-toggle-button.tsx
     │   └── theme-toggle.tsx
