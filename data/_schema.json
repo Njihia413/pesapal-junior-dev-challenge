@@ -121,7 +121,7 @@
           "nullable": false,
           "primary_key": true,
           "unique": true,
-          "auto_increment": true,
+          "auto_increment": false,
           "default": null
         },
         {
