@@ -80,7 +80,7 @@ class Database:
                     "nullable": col.nullable,
                     "primary_key": col.primary_key,
                     "unique": col.unique,
-                    "auto_increment": col.auto_increment,
+                    "auto_increment": col.auto_increment or False,
                 }
                 for col in table.columns
             ],
