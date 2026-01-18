@@ -140,7 +140,7 @@ async def insert_row(table_name: str, request: InsertRequest):
     columns = [col["name"] for col in table_info["columns"]]
 
     # Build INSERT statement
-    insert_columns = [k for k in request.data.keys() if k in columns]
+    insert_columns = [k for k in request.data.keys() if k in columns and k != 'id']
     values = []
     for col in insert_columns:
         val = request.data[col]
@@ -235,10 +235,10 @@ async def drop_table(table_name: str):
         raise HTTPException(status_code=400, detail=result.message)
 
     return {"success": True, "message": result.message}
-
-
-# Entry point
-if __name__ == "__main__":
-    import uvicorn
-
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    
+    
+    # Entry point
+    if __name__ == "__main__":
+        import uvicorn
+    
+        uvicorn.run(app, host="0.0.0.0", port=8000)
