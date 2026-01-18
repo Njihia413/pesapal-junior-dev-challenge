@@ -3,9 +3,15 @@ PesapalDB REST API Models
 
 Pydantic models for request/response validation.
 """
+from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, Field
-from typing import Any, Dict, List, Optional
+
+
+class Category(BaseModel):
+   id: int
+   name: str
+   description: Optional[str] = None
 
 
 class QueryRequest(BaseModel):
