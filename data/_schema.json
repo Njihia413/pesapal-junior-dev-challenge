@@ -1,0 +1,174 @@
+{
+  "name": "default",
+  "tables": {
+    "categories": {
+      "name": "categories",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "INTEGER",
+          "length": null,
+          "nullable": false,
+          "primary_key": true,
+          "unique": true,
+          "auto_increment": true,
+          "default": null
+        },
+        {
+          "name": "name",
+          "data_type": "VARCHAR",
+          "length": 100,
+          "nullable": false,
+          "primary_key": false,
+          "unique": true,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "description",
+          "data_type": "VARCHAR",
+          "length": 500,
+          "nullable": true,
+          "primary_key": false,
+          "unique": false,
+          "auto_increment": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        "id"
+      ],
+      "auto_increment_counters": {
+        "id": 1
+      }
+    },
+    "products": {
+      "name": "products",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "INTEGER",
+          "length": null,
+          "nullable": false,
+          "primary_key": true,
+          "unique": true,
+          "auto_increment": true,
+          "default": null
+        },
+        {
+          "name": "name",
+          "data_type": "VARCHAR",
+          "length": 200,
+          "nullable": false,
+          "primary_key": false,
+          "unique": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "sku",
+          "data_type": "VARCHAR",
+          "length": 50,
+          "nullable": false,
+          "primary_key": false,
+          "unique": true,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "category_id",
+          "data_type": "INTEGER",
+          "length": null,
+          "nullable": true,
+          "primary_key": false,
+          "unique": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "price",
+          "data_type": "FLOAT",
+          "length": null,
+          "nullable": false,
+          "primary_key": false,
+          "unique": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "quantity",
+          "data_type": "INTEGER",
+          "length": null,
+          "nullable": true,
+          "primary_key": false,
+          "unique": false,
+          "auto_increment": false,
+          "default": 0
+        }
+      ],
+      "indexes": [
+        "id"
+      ],
+      "auto_increment_counters": {}
+    },
+    "suppliers": {
+      "name": "suppliers",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "INTEGER",
+          "length": null,
+          "nullable": false,
+          "primary_key": true,
+          "unique": true,
+          "auto_increment": true,
+          "default": null
+        },
+        {
+          "name": "name",
+          "data_type": "VARCHAR",
+          "length": 200,
+          "nullable": false,
+          "primary_key": false,
+          "unique": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "email",
+          "data_type": "VARCHAR",
+          "length": 100,
+          "nullable": true,
+          "primary_key": false,
+          "unique": true,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "phone",
+          "data_type": "VARCHAR",
+          "length": 20,
+          "nullable": true,
+          "primary_key": false,
+          "unique": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "address",
+          "data_type": "VARCHAR",
+          "length": 500,
+          "nullable": true,
+          "primary_key": false,
+          "unique": false,
+          "auto_increment": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        "id"
+      ],
+      "auto_increment_counters": {}
+    }
+  }
+}
