@@ -190,18 +190,18 @@ SELECT * FROM users WHERE active = true;"
                 )}
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="max-w-full">
               {!result ? (
                 <p className="py-8 text-center text-muted-foreground">
                   Execute a query to see results
                 </p>
               ) : result.rows.length > 0 ? (
                 <div className="overflow-x-auto">
-                  <Table>
+                  <Table className="table-fixed w-full">
                     <TableHeader>
                       <TableRow className="hover:bg-transparent">
                         {result.columns.map((col) => (
-                          <TableHead key={col}>{col}</TableHead>
+                          <TableHead key={col} className="break-all">{col}</TableHead>
                         ))}
                       </TableRow>
                     </TableHeader>
@@ -209,7 +209,7 @@ SELECT * FROM users WHERE active = true;"
                       {result.rows.map((row, idx) => (
                         <TableRow key={idx}>
                           {result.columns.map((col) => (
-                            <TableCell key={col}>
+                            <TableCell key={col} className="break-all">
                               {String(row[col] ?? 'NULL')}
                             </TableCell>
                           ))}
