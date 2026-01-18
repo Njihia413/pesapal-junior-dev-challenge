@@ -143,4 +143,11 @@ export const api = {
     return handleResponse<{ success: boolean; message: string }>(response);
        },
     
-      };
+  // Reset database
+  async resetDatabase(): Promise<{ success: boolean; message: string }> {
+    const response = await fetch(`${API_BASE}/reset`, {
+      method: 'POST',
+    });
+    return handleResponse<{ success: boolean; message: string }>(response);
+  },
+  };
