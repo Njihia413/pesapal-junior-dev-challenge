@@ -244,6 +244,7 @@ Goodbye!
 | GET    | `/health`                  | Health check        |
 | GET    | `/stats`                   | Database statistics |
 | POST   | `/query`                   | Execute SQL query   |
+| POST   | `/reset`                   | Reset database      |
 | GET    | `/tables`                  | List all tables     |
 | GET    | `/tables/{name}`           | Get table info      |
 | GET    | `/tables/{name}/rows`      | Get table rows      |
