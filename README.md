@@ -29,11 +29,17 @@ A custom relational database management system built from scratch for the **Pesa
 
 ### Screenshots
 
-*A brief demonstration of the system in action. Replace the placeholder links with your actual screenshots.*
+![PesapalDB Dashboard](frontend/public/dashboard.png)
 
-Dashboard | SQL Console |
-:---: | :---: |
-*Dashboard Screenshot* | *SQL Console Screenshot* |
+![PesapalDB Categories](frontend/public/categories.png)
+
+![PesapalDB Products](frontend/public/products.png)
+
+![PesapalDB Suppliers](frontend/public/suppliers.png)
+
+![PesapalDB SQL Console](frontend/public/sql_console.png)
+
+![PesapalDB Interactive REPL](frontend/public/interactive_repl.png)
 
 ---
 
@@ -177,7 +183,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
 # Run the interactive REPL
-python -m rdbms.repl
+python3 -m rdbms.repl
 
 # Or start the API server
 uvicorn api.main:app --reload
