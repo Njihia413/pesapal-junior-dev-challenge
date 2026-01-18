@@ -106,8 +106,8 @@ export default function SQLConsolePage() {
     },
     {
       name: 'Insert Sample Data',
-      sql: `INSERT INTO categories (name, description) 
-VALUES ('Electronics', 'Electronic devices and accessories');`,
+      sql: `INSERT INTO categories (name, description)
+      VALUES ('Electronics', 'Electronic devices and accessories');`,
     },
     {
       name: 'Select All',
@@ -247,15 +247,14 @@ SELECT * FROM users WHERE active = true;"
                 </Button>
               ))}
             </CardContent>
-          </Card>
-
-          <Card className="glass">
-            <CardHeader className="pb-3">
-              <CardTitle className="flex items-center gap-2 text-lg">
-                <Clock className="h-4 w-4" />
-                Query History
-              </CardTitle>
-            </CardHeader>
+                      </Card>
+                      <Card className="glass">
+                        <CardHeader className="pb-3">
+                          <CardTitle className="flex items-center gap-2 text-lg">
+                            <Clock className="h-4 w-4" />
+                            Query History
+                          </CardTitle>
+                        </CardHeader>
             <CardContent>
               {history.length === 0 ? (
                 <p className="py-4 text-center text-sm text-muted-foreground">
